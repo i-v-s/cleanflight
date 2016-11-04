@@ -19,3 +19,4 @@ docs/Manual.pdf
 README.pdf
 
 /Debug/
+*.user
