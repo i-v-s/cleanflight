@@ -9,7 +9,7 @@ Stm32f1Application {
     property string linkerDir : "src/main/target"
     property string target: "NAZE"
     property string forkName: "cleanflight"
-    property int flashSize: 128
+    property int flashSize: 256
 
     type: ["application", "hex","bin","size", "elf", "disassembly"]
     name: "Naze32 rev 6 Cleanflight"

@@ -81,14 +81,18 @@ Product {
     }
 
     cpp.linkerFlags: [
-        "-L" + product.sourceDirectory + "/" + linkerDir,
-        "-T" + product.sourceDirectory + "/" + linkerDir + "/stm32_flash_f103_" + flashSize + "k.ld",
+        "-lm",
         "-mthumb",
         "-mcpu=cortex-m3",
-        "-Wl,-Map," + destinationDirectory + targetFile + ".map",
+        "-lc",
+        "-lnosys",
+        "--specs=nano.specs",
+        //"-Wl,-Map," + destinationDirectory + targetFile + ".map",
         "-ffunction-sections",
         "-fdata-sections",
-        "-Wl,--gc-sections",
+        //"-Wl,--gc-sections",
+        "-L" + product.sourceDirectory + "/" + linkerDir,
+        "-T" + product.sourceDirectory + "/" + linkerDir + "/stm32_flash_f103_" + flashSize + "k.ld",
         //"--specs=nano.specs",
         //"--specs=nosys.specs"
     ]
